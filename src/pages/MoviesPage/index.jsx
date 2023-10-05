@@ -1,7 +1,6 @@
 import { fetchMovie } from 'api/theMovieDbApi';
 import FilmsList from 'components/FilmsList';
 import SearcBar from 'components/SearhBar';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useSearchParams } from 'react-router-dom';
 
