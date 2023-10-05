@@ -18,6 +18,9 @@ export const fetchTrendMovie = async () => {
 export const fetchMovie = async searchQuerry => {
   const url = `https://api.themoviedb.org/3/search/movie?query=${searchQuerry}&include_adult=false&language=en-US&page=1`;
   const { data } = await axios.get(url, params);
+  if (data.results.length === 0) {
+    return Notify.failure('There is no results');
+  }
   return data.results;
 };
 

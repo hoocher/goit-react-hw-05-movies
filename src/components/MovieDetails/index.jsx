@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const MovieDetail = ({ data }) => {
   const { title, release_date, poster_path, vote_average, overview, genres } =
@@ -15,7 +15,7 @@ const MovieDetail = ({ data }) => {
 
   return (
     <>
-      <Link to={location?.state?.from || '/'}>Go back</Link>
+      <Link to={location.state || '/'}>Go back</Link>
       <div>
         <img
           src={
@@ -43,10 +43,14 @@ const MovieDetail = ({ data }) => {
         <p>Additional information:</p>
         <ul>
           <li>
-            <Link to="cast">Cast</Link>
+            <Link to="cast" state={location.state}>
+              Cast
+            </Link>
           </li>
           <li>
-            <Link to="review">Review</Link>
+            <Link to="review" state={location.state}>
+              Review
+            </Link>
           </li>
         </ul>
       </div>
