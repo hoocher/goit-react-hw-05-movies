@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 
 const MoeviesPageDetails = () => {
-  const { id } = useParams();
+  const { id } = useParams('');
 
   const [movData, setMovData] = useState(() => {
     const fetchDetails = async () => {

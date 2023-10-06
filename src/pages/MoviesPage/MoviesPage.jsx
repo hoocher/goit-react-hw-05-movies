@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 const MoviesPages = () => {
-  const [films, setFilms] = useState();
+  const [films, setFilms] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const query = searchParams.get('query');
