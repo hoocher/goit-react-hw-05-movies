@@ -29,7 +29,7 @@ const MovieDetail = ({ data }) => {
         <h3>
           {title} ({date})
         </h3>
-        <span>User Score: {vote_average * 10}%</span>
+        <span>User Score: {`${Math.round(vote_average * 10)}`}%</span>
         <h4>Overview</h4>
         <span>{overview}</span>
         <h5>Genres</h5>
